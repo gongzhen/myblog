@@ -1,0 +1,395 @@
+/*
+
+My Custom CSS
+=============
+
+Author:  Brad Hussey
+Updated: August 2013
+Notes:	 Hand coded for Udemy.com
+
+*/
+
+
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+
+#features {
+   text-align: center;
+}
+
+#features img {
+   margin: 0 0 20px; /* top right bottom */ 
+}
+
+.content_page {
+  text-align:left;
+  margin-left:auto;
+  margin-right:auto;
+  max-width:980px;
+  padding-top:40px;
+  padding-bottom:60px;
+}
+
+.home-bottom {
+  display:table;
+  table-layout:fixed;
+  width:100%;
+  height:200px;
+  border:none;
+  max-width:980px;
+  margin-top:25px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:50px;
+}
+
+.home-bottom-box {
+  display:table-cell;
+  background:#e0e0e0;
+  padding:20px;
+  border-right:10px solid white;
+}
+
+.home-bottom-box:last-child {
+  border-right:none;
+}
+
+.col-10{
+  float: none;
+  margin: 0 auto;
+}
+
+.clickable {
+   cursor: pointer;
+}
+
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+
+body{
+   -webkit-font-smoothing: antialiased; /* http://maxvoltar.com/sandbox/fontsmoothing/ */
+   text-rendering:optimizelegibility;
+   
+}
+
+#main {
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+#about {
+  margin-top: 60px;
+}
+
+.well .page-header{
+   margin-top:0;
+}
+
+.well .page-header h1 {
+   margin-top: 0;
+}
+
+img.thumbnail {
+   margin: 0 20px 10px 0;
+}
+
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+   
+#searchInput{
+   width: 200px
+}
+
+
+.navbar-brand{
+   padding:13px 15px;
+}
+
+/* --------------------------------------
+   Carousel
+   -------------------------------------- */
+
+#myCarousel {
+   margin-top: 60px;
+}
+
+.carousel-caption {
+   font-size: 24px;
+}
+
+
+.carousel-caption h4{
+   font-size: 32px;
+}
+
+#myCarousel .item{ height:400px;}
+
+#slide1 {
+   background: url('../../images/carousel_large_01.jpg') top center no-repeat;
+}
+
+
+#slide2 {
+   background: url('../../images/carousel_large_01.jpg') top center no-repeat;
+}
+
+
+#slide3 {
+   background: url('../../images/carousel_large_01.jpg') top center no-repeat;
+}
+
+
+/*=Post Loop 
+-------------------------------------------------------------- */
+
+#post-loop {
+    margin: 50px auto auto auto;
+    max-width: 980px;
+
+}
+
+#post-loop .container {
+  width: 975px;
+  height: auto;
+  
+}
+
+.entry-content #post-loop .container {
+  width: auto;
+  
+  margin: 0 -7px;
+}
+
+#post-loop .post {
+  width: 33.3333%;
+  
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-bottom: 14px;
+  overflow: hidden;
+/*  padding: 0 7px;*/
+}
+
+#post-loop .post.sticky {
+}
+
+#post-loop .post-background {
+  position: relative;
+  height: 420px;
+  width: auto;
+  background: #006695;
+}
+
+#post-loop .post-background.loading {
+  background: #006695 url(images/slider-loader.gif) no-repeat center center;
+}
+
+#post-loop .post-background img {
+  width: 100%;
+  
+}
+
+#post-loop .post-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 420px;
+  
+  background: #006695;
+  background-color: rgba(0,102,149,0.955);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  opacity: 0;
+  overflow: hidden;
+  padding: 5px 20px;
+}
+
+#post-loop .post-content-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  display: block;
+}
+
+#post-loop .post-content h2 {
+  color: #fff;
+  font: 300 21px DIN, Helvetica Neue, Geneva, Arial, sans-serif;
+  margin: 20px 0;
+  word-wrap: break-word;
+}
+
+#post-loop .post-content h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#post-loop .post-content .excerpt {
+  color: #fff;
+  font-family: DIN, sans-serif;
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+/* =Post Loop  : Date and Comments 
+-------------------------------------------------------------- */
+
+#post-loop .post-content .date,
+#post-loop .post-content .comments {
+  position: absolute;
+  
+  color: #dddddd;
+  display: none;
+  font-family: 'Belgrano', serif;
+  font-size: 12px;
+}
+
+#post-loop .post-content:hover .date,
+#post-loop .post-content:hover .comments {
+  display: block;
+}
+
+#post-loop .post-content .date a,
+#post-loop .post-content .comments a {
+  color: #dddddd;
+  text-decoration: none;
+}
+
+#post-loop .post-content .date em,
+#post-loop .post-content .comments em {
+  width: 16px;
+  height: 16px;
+  
+  display: inline-block;
+  margin-bottom: -3px;
+  margin-right: 6px;
+}
+
+#post-loop .post-content .date {
+  bottom: 10px;
+  left: 10px;
+  
+}
+
+#post-loop .post-content .comments {
+  right: 10px;
+  bottom: 10px;
+  
+}
+
+#post-loop .post-content .date em {
+  background-image: url(images/sprites/loop-icon-date.png);
+}
+
+#post-loop .post-content .comments em {
+  background-image: url(images/sprites/loop-icon-comments.png);
+}
+
+/* =Post Loop  : Corners 
+-------------------------------------------------------------- */
+
+#post-loop .corner {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  
+}
+
+#post-loop .corner.corner-se {
+  right: 5px;
+  bottom: 5px;
+  
+  background: url(images/sprites/loop-corner-se.png) no-repeat;
+}
+
+#post-loop img.thumbnail {
+  position: relative;
+  top: 0;
+  left: 0;
+  
+}
+
+
+/* --------------------------------------
+   Global Styles
+   -------------------------------------- */
+
+.alert{
+   margin-top: 20px;
+   display: none; /* alert box will not display*/
+}
+
+.well {
+   margin:20px 0;
+}
+
+.thumbnail {
+  position: relative;
+}
+
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+	
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+   #myCarousel .item{ height:310px; }
+
+   #slide1 {
+      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
+   }
+
+   #slide2 {
+      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
+   }
+
+   #slide3 {
+      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
+   }
+
+   /* for mobile devices */
+   .carousel-caption {
+      font-size: 16px;
+   }
+
+   .carousel-caption h4{
+      font-size: 22px;
+   }
+
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+   #myCarousel .item{ height:500px; }
+   #slide1 {
+      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
+   }
+
+   #slide2 {
+      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
+   }
+
+   #slide3 {
+      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
+   }
+	
+}

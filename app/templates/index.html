@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block main %}
+
+
+
+<div class="home-bottom">
+  <div class="home-bottom-box">
+    <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:20px;">Follow me</h3>
+    Follow me on your favourite social media. I am not always active on all of them though.
+    <div style="margin-top:15px;">
+      {% set sns_links = [
+      ('facebook', 'https://www.facebook.com/gongzhen'),
+      ('weibo', 'http://www.weibo.com/1760933442/profile?topnav=1&wvr=5&user=1'),
+      ('twitter', 'https://twitter.com/gong_zhen'),
+      ('quora', 'http://www.quora.com/Gong-Zhen-2/'),
+      ('github', 'https://github.com/gongzhen'),
+      ('linkedin', 'https://www.linkedin.com/profile/view?id=137631356&trk=nav_responsive_tab_profile'),
+      ('flickr', ''),
+      ('500px', ''),
+      ('gplus', 'https://plus.google.com/u/0/'),
+      ('zhihu', 'http://www.zhihu.com/people/gong-zhen-58'),
+      ] %}
+
+      {% for (id, link) in sns_links %}
+      <div style="display:inline-block;margin-right:10px;margin-bottom:10px;line-height:1em;" class="clickable"><a href="{{ link }}" style="border:0;margin:0;width:40px;height:40px;padding:0;"><img alt="{{ id }}" src="http://static.dheera.net/icons/{{ id }}.gif" style="padding:0;margin:0;width:40px;height:40px;"></a></div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="home-bottom-box">
+    <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:20px;">Contact me</h3>
+    The easiest way to reach me is by e-mail at<br><br>
+    If you're trying to hire me, you might want to check out my <a href="{{url_for('static', filename='resume.pdf')}}">resume</a><a href=""></a>}
+  </div>
+
+
+  <div class="home-bottom-box">
+    <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:20px;">Contact me</h3>
+    The easiest way to reach me is by e-mail at<br><br>
+    If you're trying to hire me, you might want to check out my <a href="{{url_for('static', filename='resume.pdf')}}">resume</a><a href=""></a>}
+  </div>
+</div>
+
+
+{% endblock %}
+
