@@ -1,45 +1,80 @@
 {% extends "base.html" %}
+{% block title %}Index{% endblock %}
 {% block main %}
 
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-12 entry-content">
+
+                <!-- Title -->
+                <h3>Gong Zhen</h3>
+                <h4>Software Engineer based in Los Angeles, California</h4>  
+
+                <hr>
+
+                <!-- Introduction Content -->
+                <p class="lead">My name is Gong Zhen and lately I am a C Developer at Advent Resources in San Pedro, CA. Previously, I worked as a php programmer at PSC Biotech in Pomona, CA. Before that, I received my master degree in computer science at the California State Polytechnic University, Pomona.</p>
+                <p>During my job, I work on C, php and Javascript. I try to keep myself current with the new 
+                 technologies and trends, seeking training where needed and participating in events. My main interests at the moment lie in back end and server side applications.</p>
+                <p>I loving coding, in particular with C/C++, Java and Python. Ilove building fast, performant, rock solid web interfaces/applications for the destktop and mobile.</p>
+                <p>I like challenges and I am eager to learn new things and to improve every day.</p>
+                <hr>
+
+                <h3>latest blog entries</h3>
+                <h4>coming soon.....</h4>
+                <hr>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
 
 
-<!-- <div class="home-bottom">
-  <div class="home-bottom-box">
-    <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:20px;">Follow me</h3>
-    Follow me on your favourite social media. I am not always active on all of them though.
-    <div style="margin-top:15px;">
-      {% set sns_links = [
-      ('facebook', 'https://www.facebook.com/gongzhen'),
-      ('weibo', 'http://www.weibo.com/1760933442/profile?topnav=1&wvr=5&user=1'),
-      ('twitter', 'https://twitter.com/gong_zhen'),
-      ('quora', 'http://www.quora.com/Gong-Zhen-2/'),
-      ('github', 'https://github.com/gongzhen'),
-      ('linkedin', 'https://www.linkedin.com/profile/view?id=137631356&trk=nav_responsive_tab_profile'),
-      ('flickr', ''),
-      ('500px', ''),
-      ('gplus', 'https://plus.google.com/u/0/'),
-      ('zhihu', 'http://www.zhihu.com/people/gong-zhen-58'),
-      ] %}
-
-      {% for (id, link) in sns_links %}
-      <div style="display:inline-block;margin-right:10px;margin-bottom:10px;line-height:1em;" class="clickable"><a href="{{ link }}" style="border:0;margin:0;width:40px;height:40px;padding:0;"><img alt="{{ id }}" src="http://static.dheera.net/icons/{{ id }}.gif" style="padding:0;margin:0;width:40px;height:40px;"></a></div>
-      {% endfor %}
-    </div>
-  </div>
-
-  <div class="home-bottom-box">
-    <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:20px;">Contact me</h3>
-    The easiest way to reach me is by e-mail at<br><br>
-    If you're trying to hire me, you might want to check out my <a href="{{url_for('static', filename='resume.pdf')}}">resume</a><a href=""></a>}
-  </div>
 
 
-  <div class="home-bottom-box">
-    <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:20px;">Contact me</h3>
-    The easiest way to reach me is by e-mail at<br><br>
-    If you're trying to hire me, you might want to check out my <a href="{{url_for('static', filename='resume.pdf')}}">resume</a><a href=""></a>}
-  </div>
-</div> -->
+  <div class="home-bottom">
+    <div class="row">
+      <div class="col-md-4 home-bottom-box">
+        <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:20px;">Follow me</h3>
+        <div id="contact">Follow me on your favourite social media. I am not always active on all of them though.</div> 
+        <div style="margin-top:15px;">
+          {% set sns_links = [
+          ('facebook', 'https://www.facebook.com/gongzhen'),
+          ('weibo', 'http://www.weibo.com/1760933442/profile?topnav=1&wvr=5&user=1'),
+          ('twitter', 'https://twitter.com/gong_zhen'),
+          ('quora', 'http://www.quora.com/Gong-Zhen-2/'),
+          ('github', 'https://github.com/gongzhen'),
+          ('linkedin', 'https://www.linkedin.com/profile/view?id=137631356&trk=nav_responsive_tab_profile'),
+          ('flickr', ''),
+          ('500px', ''),
+          ('gplus', 'https://plus.google.com/u/0/'),
+          ('zhihu', 'http://www.zhihu.com/people/gong-zhen-58'),
+          ] %}
+
+          {% for (id, link) in sns_links %}
+          <div style="display:inline-block;margin-right:10px;margin-bottom:10px;line-height:1em;" class="clickable"><a href="{{ link }}" style="border:0;margin:0;width:40px;height:40px;padding:0;"><img alt="{{ id }}" src="http://static.dheera.net/icons/{{ id }}.gif" style="padding:0;margin:0;width:40px;height:40px;"></a></div>
+          {% endfor %}
+        </div>
+      </div>        
+
+      <div class="col-md-4 home-bottom-box">
+        <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:20px;">News</h3>
+        <div id="contact">coming soon...</div>
+
+      </div>                
+
+      <div class="col-md-4 home-bottom-box">
+        <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:20px;">Contact me</h3>
+        <div id="contact">
+          The easiest way to reach me is by e-mail at <b>gongzhengz at gmail dot com</b>
+          My resume is available <a href="https://drive.google.com/file/d/0B3wGJbnS4Svza1ZkeUNqX1FfTTA/view?usp=sharing">here</a>          
+        </div>
+      </div>        
+    </div> 
+</div>
+ 
+
 
 
 {% endblock %}

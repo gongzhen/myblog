@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     <!-- https://github.com/esbullington/flask-bootstrap/tree/master/app/static 
     http://geek4it.com/
     https://realpython.com/
     http://top.jobbole.com/
+    http://traceinvest.com/
+    https://0x0b.de/
+    http://adrianlange.com/
     -->
-
+    <title>{% block title %}{% endblock %} - My Webpage</title>
     <!-- Website Title & Description for Search Engine purposes -->
-    <title>Hello World</title>
     <meta name="description" content="">
 
     <!-- Mobile viewport optimized -->
@@ -18,90 +19,45 @@
     <!-- Bootstrap CSS -->
     <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-
-    <!-- Include Modernizr in the head, before any other Javascript -->
-    <script src="/static/includes/js/modernizr-2.6.2.min.js"></script>  
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"> 
   </head>
   <body>
-    <div class="container" id="main">
 
-      <div class="navbar navbar-default navbar-fixed-top">
+    <div class="header">
+      <div class="navbar navbar-default">
         <div class="container">      
-          <a href="/" class="navbar-brand"><img src="{{url_for('static', filename='images/logo.png')}}" alt="Your Logo"></a>
-          
+          <a href="/" class="navbar-brand"><img src="{{url_for('static', filename='images/logo.png')}}" alt="Your Logo"></a>          
           <div class="pull-right collapse navbar-collapse navbar-responsive-collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav nav-pills pull-right">
               <li class="active">
-                <a href="#">Home</a>
-                </li>
-              
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <strong class="caret"></strong></a>
-                
-                <ul class="dropdown-menu">             
-                  <li>
-                    <a href="{{url_for('index.about')}}">About</a>
-                  </li>
-                  
-                  <li class="divider"></li>
-                  
-                  <li class="dropdown-header">More Services</li>
-                  
-                  <li>
-                    <a href="{{url_for('index.projects')}}">Projects</a>
-                  </li>
-                  
-                  <li>
-                    <a href="{{url_for('index.contacts')}}">Contact</a>
-                  </li>
-                </ul><!-- end dropdown-menu -->
+                <a href="{{url_for('index.home')}}">Home</a>
               </li>
+              <li>
+                <a href="{{url_for('index.projects')}}">Projects</a>
+              </li> 
+              <li>
+                <a href="{{url_for('index.resume')}}">Resume</a>
+              </li>  
+              <li>
+                <a href="{{url_for('index.about')}}">About</a>
+              </li>              
             </ul> 
-
-            <form class="navbar-form pull-left">
-              <input type="text" class="form-control" id="searchInput" placeholder="Search this site....">
-              <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>            
-            </form><!--end navbar-form-->
-
-            <ul class="nav navbar-nav pull-right">
-              <li class="dropdown">
-
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> My Account <strong class="caret"></strong></a>
-
-                <ul class="dropdown-menu">
-                  <li><a href="#">Settings</a></li>            
-                </ul>
-              </li>
-            </ul><!--end nav pull-right-->
-
-          </div><!--end nav-collapse-->			
-
+          </div><!--end nav-collapse-->     
         </div><!--end container-->
-      </div><!--end navbar-->
+      </div><!--end navbar-->      
+    </div><!--end header--> 
 
+    <div class="container" id="main">
       {% block main %} {% endblock %}<!--end blockmain-->
-
     </div><!--end container-->
-
+    
 
     <!-- First try for the online version of jQuery-->
     <script src="http://code.jquery.com/jquery.js"></script>
-
-    <!-- If no online access, fallback to our hardcoded version of jQuery -->
-    <script>window.jQuery || document.write('<script src="static/includes/js/jquery-1.8.2.min.js"><\/script>')</script>
-
-      <!-- Bootstrap JS -->
-      <script src="/static/bootstrap/js/bootstrap.min.js"></script>
-
-      <!-- Custom JS -->
-      <script src="/static/js/jquery.flexslider-min.js"></script>   
-
-      <script src="/static/themes/snapshot/snapshot.min.js"></script>  	
-
-      <!-- Custom JS -->
-      <script src="/static/js/script.js"></script>    
-
+    <!-- Bootstrap JS -->
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/static/js/script.js"></script>    
     </body>
   </html>
 
