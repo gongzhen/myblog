@@ -133,6 +133,12 @@ img.thumbnail {
   font-size: 0.8em;
 }
 
+#latest-blog-entries h4, a{
+  font-size: 1.0em;
+  color: #111;
+  font-family: "Merriweather", arial, sans-serif;
+}
+
 /* --------------------------------------
    Navbar
  ---------------------------------------- */

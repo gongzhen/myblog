@@ -22,3 +22,4 @@ $(document).ready(function () {
         return this.href == url;
     }).parent().addClass('active');
 });
+

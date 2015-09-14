@@ -18,8 +18,14 @@
 
     <!-- Bootstrap CSS -->
     <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    {% block extra_head %}
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"> 
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    {% endblock %}
   </head>
   <body>
 
@@ -30,16 +36,16 @@
           <div class="pull-right collapse navbar-collapse navbar-responsive-collapse">
             <ul class="nav nav-pills pull-right">
               <li class="active">
-                <a href="{{url_for('index.home')}}">Home</a>
+                <a href="{{url_for('home.index')}}">Home</a>
               </li>
               <li>
-                <a href="{{url_for('index.projects')}}">Projects</a>
+                <a href="{{url_for('home.projects')}}">Projects</a>
               </li> 
               <li>
-                <a href="{{url_for('index.resume')}}">Resume</a>
+                <a href="{{url_for('home.resume')}}">Resume</a>
               </li>  
               <li>
-                <a href="{{url_for('index.about')}}">About</a>
+                <a href="{{url_for('home.about')}}">About</a>
               </li>              
             </ul> 
           </div><!--end nav-collapse-->     
@@ -50,14 +56,12 @@
     <div class="container" id="main">
       {% block main %} {% endblock %}<!--end blockmain-->
     </div><!--end container-->
-    
 
-    <!-- First try for the online version of jQuery-->
-    <script src="http://code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JS -->
     <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
     <!-- Custom JS -->
-    <script src="/static/js/script.js"></script>    
+    <script src="/static/js/script.js"></script>  
     </body>
   </html>
 
