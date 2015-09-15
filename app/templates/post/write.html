@@ -14,9 +14,8 @@
 {% block main %}
 
 <div class="well">
-<h5>Result</h5>
 	<div class="editor-wrapper">
-		<form action="#" method="post" accept-charset="utf-8" name="workspace">
+		<form action="{{url_for("post.create")}}" method="post" accept-charset="utf-8" name="workspace">
 			<input name="title" class="title" type="text" placeholder="Title" id="title"/>
 			<input name="title_pic" class="title" type="text" placeholder="Title Picture Url" id="title_pic"/>
 			<input type="hidden" name="published" id="published" value=0 />
@@ -53,7 +52,7 @@
   var publish_post = function() {
     editor.codemirror.save();
     form.target = '_self';
-    form.action= '';
+    form.action= '{{url_for("post.create")}}';
     form.published.value = 1;
     form.submit()
   };

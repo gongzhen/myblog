@@ -17,13 +17,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Bootstrap CSS -->
-    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    {% block extra_head %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" >
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"> 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    {% block extra_head %}
+
 
     {% endblock %}
   </head>
@@ -56,12 +55,15 @@
     <div class="container" id="main">
       {% block main %} {% endblock %}<!--end blockmain-->
     </div><!--end container-->
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <!-- Bootstrap JS -->
-    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Custom JS -->
-    <script src="/static/js/script.js"></script>  
+    <script src="static/js/script.js"></script>  
     </body>
   </html>
 
