@@ -3,10 +3,10 @@
 {% block extra_head %}
 {{super()}}
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<link rel="stylesheet" href="{{url_for('static', filename='css/admin.css')}}" type="text/css" />
+<!-- <link rel="stylesheet" href="{{url_for('static', filename='css/admin.css')}}" type="text/css" /> -->
 <link rel="stylesheet" href="{{url_for('static', filename='editor/editor.css')}}" type="text/css" />
-<link rel="stylesheet" href="{{url_for('static', filename='css/write.css')}}" type="text/css" />
-<!-- Bootstrap JS -->
+<!-- <link rel="stylesheet" href="{{url_for('static', filename='css/write.css')}}" type="text/css" /> -->
+<!-- Markdown JS -->
 <script type="text/javascript" src="{{url_for('static', filename='markdown/js/marked.js')}}"></script>
 <script type="text/javascript" src="{{url_for('static', filename='editor/editor.js')}}"></script>
 {% endblock %}
