@@ -14,25 +14,24 @@
           <hr>
 
           <!-- Introduction Content -->
-          <p class="lead">My name is Gong Zhen and lately I am a C Developer at Advent Resources in San Pedro, CA. Previously, I worked as a php programmer at PSC Biotech in Pomona, CA. Before that, I received my master degree in computer science at the California State Polytechnic University, Pomona.</p>
+          <p class="lead">Welcome to my site, My name is Gong Zhen and lately I am a C Developer at Advent Resources in San Pedro, CA. Previously, I worked as a php programmer at PSC Biotech in Pomona, CA. Before that, I received my master degree in computer science at the California State Polytechnic University, Pomona.</p>
           <p>During my job, I work on C, php and Javascript. I try to keep myself current with the new 
            technologies and trends, seeking training where needed and participating in events. My main interests at the moment lie in back end and server side applications.</p>
-          <p>I loving coding, in particular with C/C++, Java and Python. Ilove building fast, performant, rock solid web interfaces/applications for the destktop and mobile.</p>
+          <p>I like blogging about computer science in general. I love building fast, performant, rock solid web interfaces/applications for the destktop and mobile.</p>
           <p>I like challenges and I am eager to learn new things and to improve every day.</p>
           <hr>
           
           <div id="latest-blog-entries" class="row">
+            <h3>Latest Blog Entries</h3>  
+            {% for post in posts %} 
             <div class="col-md-10">
-              <h3>Latest Blog Entries</h3>
-              <h4>Deploy a Flask Application on an AWS</h4>
-              
+              <a href="{{ url_for('post.page', id=post.id)}}"><h4>{{ post.title }}</h4></a>
             </div>
             <div class="col-md-2">
-              <p class="blog-summary-date float-right">Sat Sep 12 2015 </p>
-
+              <p class="blog-summary-date float-right">{{moment(post.timestamp).calendar()}}</p>
             </div>
+            {% endfor %}
           </div>
-
           <hr>
 
       </div>

@@ -1,14 +1,19 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from ..models import Post
+from app import models
 from .. import db
 
 post = Blueprint('post', __name__)
 
 # http://stackoverflow.com/questions/7974771/flask-blueprint-template-folder
-@post.route('/post/<int:id>')
-def pages(id):
-	post = Post.query.get_or_404(id);
-	return render_template('post.html', post=[post])
+@post.route('/post/index', methods=['GET', 'POST'])
+def index():
+	return render_template('post/index.html')
+
+@post.route('/post/page/<int:id>')
+def page(id):
+	post = models.Post.query.get_or_404(id);
+	return render_template('post/post.html', post = post)
 
 @post.route('/post/write')
 def write():
@@ -19,14 +24,8 @@ def create():
 	title = request.form['title']
 	title_pic = request.form['title_pic']
 	body = request.form['body']
-	
-	print title
-	print title_pic
-	print body
-	posts = Post(title=title, title_pic=title_pic, body=body)
+	post = Post(title=title, title_pic=title_pic, body=body)
 	db.session.add(post)
-	return redirect(url_for('pages', id=post.id))	
-
-@post.route('/post/edit/<int:id>')
-def edit(id):
-	return redirect(url_for('post/edit.html'))		
+	db.session.commit()
+	return redirect(url_for('.page', id=post.id))	
+	
