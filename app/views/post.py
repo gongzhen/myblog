@@ -1,14 +1,21 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from ..models import Post
+from app import models
+from app.markdown import markdown
 from .. import db
 
 post = Blueprint('post', __name__)
 
 # http://stackoverflow.com/questions/7974771/flask-blueprint-template-folder
+@post.route('/post/index', methods=['GET', 'POST'])
+def index():
+	return render_template('post/index.html')
+
 @post.route('/post/<int:id>')
-def pages(id):
-	post = Post.query.get_or_404(id);
-	return render_template('post.html', post=[post])
+def page(id):
+	post = models.Post.query.get_or_404(id);
+	html = markdown.render(post.body) 
+	return render_template('post/post.html', post=post, html = html)
 
 @post.route('/post/write')
 def write():
@@ -19,16 +26,36 @@ def create():
 	title = request.form['title']
 	title_pic = request.form['title_pic']
 	body = request.form['body']
+<<<<<<< HEAD
 	
 	print title
 	print title_pic
 	print body
+=======
+>>>>>>> 140a4481663bbcd2884ab93b7e1f081cdab4f502
 	post = Post(title=title, title_pic=title_pic, body=body)
 	db.session.add(post)
-	return redirect(url_for('pages', id=post.id))	
+	db.session.commit()
+	return redirect(url_for('.page', id=post.id))	
 
-@post.route('/post/edit/<int:id>')
+@post.route('/post/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
+<<<<<<< HEAD
 	return redirect(url_for('post/edit.html'))	
 
 		
+=======
+	post = models.Post.query.get_or_404(id)
+	return render_template('post/edit.html', post=post)
+
+@post.route('/post/update/<int:id>', methods=['POST'])
+def update_post(id):
+	post = models.Post.query.get_or_404(id)
+	post.title = request.form['title']
+	post.title_pic = request.form['title_pic']
+	post.body = request.form['body']		
+	db.session.add(post)
+	return redirect(url_for('.page', id = post.id))	
+
+	
+>>>>>>> 140a4481663bbcd2884ab93b7e1f081cdab4f502

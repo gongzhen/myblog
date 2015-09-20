@@ -5,12 +5,29 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/admin.css')}}" type="text/css" /> -->
 <link rel="stylesheet" href="{{url_for('static', filename='editor/editor.css')}}" type="text/css" />
-<!-- <link rel="stylesheet" href="{{url_for('static', filename='css/write.css')}}" type="text/css" /> -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pygments.css') }}">
+
 <!-- Markdown JS -->
 <script type="text/javascript" src="{{url_for('static', filename='markdown/js/marked.js')}}"></script>
 <script type="text/javascript" src="{{url_for('static', filename='editor/editor.js')}}"></script>
 {% endblock %}
 
 {% block main %}
-{{post}}
+<div id="post" class="row">  
+	<div class="row">
+		<h2 class="blog-summary-date float-right">{{post.title}}</h2>
+		<a href="{{ url_for('.edit', id=post.id)}}"><h4>Edit</h4></a>
+	</div>
+	<div class="row">
+		<p class="blog-summary-date float-right">{{moment(post.timestamp).calendar()}}</p>
+	</div>
+	<div class="row">
+    {% autoescape false %}
+    	{{html}}
+    {% endautoescape %}	
+		
+	</div>
+</div>
+
+
 {% endblock %}

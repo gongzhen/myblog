@@ -1,10 +1,13 @@
 from flask import Blueprint, render_template, abort, redirect, url_for, request
+from app import models
+from ..models import Post
 
 home = Blueprint('home', __name__)
 
 @home.route('/')
 def index():
-    return render_template('home/index.html')
+	posts = models.Post.query.all()
+	return render_template('home/index.html', posts = posts)
 
 @home.route('/about')
 def about():

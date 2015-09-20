@@ -4,13 +4,18 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 from flask import Flask, request, render_template, redirect, url_for, request
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.moment import Moment
+from flask.ext.misaka import Misaka
 
+moment = Moment()
 db = SQLAlchemy()
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
 db.init_app(app)
+moment.init_app(app)
+Misaka(app)
 
 from views.home import home as home_blueprint
 app.register_blueprint(home_blueprint)
