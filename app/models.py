@@ -9,6 +9,5 @@ class Post(db.Model):
 	body = db.Column(db.Text)
 	timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
-	
-	
-		
+
+

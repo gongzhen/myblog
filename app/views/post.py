@@ -23,10 +23,12 @@ def create():
 	print title
 	print title_pic
 	print body
-	posts = Post(title=title, title_pic=title_pic, body=body)
+	post = Post(title=title, title_pic=title_pic, body=body)
 	db.session.add(post)
 	return redirect(url_for('pages', id=post.id))	
 
 @post.route('/post/edit/<int:id>')
 def edit(id):
-	return redirect(url_for('post/edit.html'))		
+	return redirect(url_for('post/edit.html'))	
+
+		
