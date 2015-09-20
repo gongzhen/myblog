@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from ..models import Post
 from app import models
+from app.markdown import markdown
 from .. import db
 
 post = Blueprint('post', __name__)
@@ -10,10 +11,11 @@ post = Blueprint('post', __name__)
 def index():
 	return render_template('post/index.html')
 
-@post.route('/post/page/<int:id>')
+@post.route('/post/<int:id>')
 def page(id):
 	post = models.Post.query.get_or_404(id);
-	return render_template('post/post.html', post = post)
+	html = markdown.render(post.body) 
+	return render_template('post/post.html', post=post, html = html)
 
 @post.route('/post/write')
 def write():
@@ -28,4 +30,19 @@ def create():
 	db.session.add(post)
 	db.session.commit()
 	return redirect(url_for('.page', id=post.id))	
+
+@post.route('/post/edit/<int:id>', methods=['GET', 'POST'])
+def edit(id):
+	post = models.Post.query.get_or_404(id)
+	return render_template('post/edit.html', post=post)
+
+@post.route('/post/update/<int:id>', methods=['POST'])
+def update_post(id):
+	post = models.Post.query.get_or_404(id)
+	post.title = request.form['title']
+	post.title_pic = request.form['title_pic']
+	post.body = request.form['body']		
+	db.session.add(post)
+	return redirect(url_for('.page', id = post.id))	
+
 	
