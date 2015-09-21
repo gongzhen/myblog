@@ -6,6 +6,7 @@ from flask import Flask, request, render_template, redirect, url_for, request
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.moment import Moment
 from flask.ext.misaka import Misaka
+from .momentjs import momentjs
 
 moment = Moment()
 db = SQLAlchemy()
@@ -16,6 +17,7 @@ app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 db.init_app(app)
 moment.init_app(app)
 Misaka(app)
+app.jinja_env.globals['momentjs'] = momentjs
 
 from views.home import home as home_blueprint
 app.register_blueprint(home_blueprint)

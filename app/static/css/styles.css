@@ -25,15 +25,8 @@ Notes:	 Hand coded for Udemy.com
 .header {
   margin-left:auto;
   margin-right:auto;
-/*  border-bottom: 1px solid #e5e5e5;*/
-  margin-top: 10px;
   margin-bottom: 0;
   line-height: 25px;
-  width: 1040px;
-}
-
-.container{
-  width: 1040px;
 }
 
 .content_page {
@@ -95,6 +88,10 @@ Notes:	 Hand coded for Udemy.com
     padding: 20px 25px 75px;
     font-size: 16px;
     line-height: 24px;
+}
+
+.wrapper {
+	margin-top: 60px;
 }
 
 /* --------------------------------------
@@ -196,10 +193,10 @@ img.thumbnail {
   font-size: 0.8em;
 }
 
-#latest-blog-entries h4, a{
-  font-size: 1.0em;
+h4, a{
+  font-size: 18px;
   color: #111;
-  font-family: "Merriweather", arial, sans-serif;
+  font-family: arial, sans-serif;
 }
 
 /* --------------------------------------
@@ -210,23 +207,28 @@ img.thumbnail {
    width: 200px
 }
 
-.navbar{
-    height: 80px;
-    width: 1040px; 
-    margin-left: auto;
-    margin-right: auto;   
-  }
-
-.navbar-brand{
-   padding:10px 25px;
+.navbar-inverse {
+    color: #fff;
+    text-align: center;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
 }
 
-.nav > li {
-    padding: 15px;
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #155799;
+}
+
+.navbar-brand{
+   padding:0px 0px;
 }
 
 .nav > li > a {
     padding: 10px 25px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #FDEBEB;
 }
 
 /* --------------------------------------
@@ -251,7 +253,6 @@ img.thumbnail {
 #slide1 {
    background: url('../../images/carousel_large_01.jpg') top center no-repeat;
 }
-
 
 #slide2 {
    background: url('../../images/carousel_large_01.jpg') top center no-repeat;
@@ -493,17 +494,12 @@ img.thumbnail {
 /* Large desktop */
 @media (min-width: 1200px) {
 
-   #myCarousel .item{ height:500px; }
-   #slide1 {
-      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
-   }
+	.navbar-nav > li > a {
+	    padding-top: 15px;
+	    padding-bottom: 15px;
+	}
 
-   #slide2 {
-      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
-   }
-
-   #slide3 {
-      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
-   }
-	
+	.container {
+	    width: 970px;
+	}		
 }

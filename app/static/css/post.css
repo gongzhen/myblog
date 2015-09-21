@@ -1,0 +1,32 @@
+/* --------------------------------------
+   Layout
+  --------------------------------------- */
+.posts-list {
+    margin: 0 0 0 5px;
+    list-style: none;
+    padding-left:0;
+}
+
+.posts-list .post {
+    position: relative;
+    display: block;
+    max-width: 600px;
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px solid #ccc;
+}
+
+.post-title {
+    position: absolute;
+    left: 120px;
+    right: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;	
+}
+
+.posts-list .post-extra {
+    position: absolute;
+    left: 0;
+    width: 120px;
+}
