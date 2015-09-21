@@ -7,14 +7,24 @@
     padding-left:0;
 }
 
+#post, #comments {
+	background: #fafafa;
+	color: #444;
+	margin: 0;
+	padding: 20px 25px 75px;
+	font-size: 16px;
+	line-height: 24px;
+}
+
 .posts-list .post {
     position: relative;
     display: block;
-    max-width: 600px;
+    max-width: initial;
     height: 40px;
     line-height: 40px;
     border-top: 1px solid #ccc;
 }
+
 
 .post-title {
     position: absolute;
@@ -30,3 +40,8 @@
     left: 0;
     width: 120px;
 }
+
+
+
+
+
