@@ -14,26 +14,28 @@
           <hr>
 
           <!-- Introduction Content -->
-          <p class="lead">Welcome to my site, My name is Gong Zhen and lately I am a C Developer at Advent Resources in San Pedro, CA. Previously, I worked as a php programmer at PSC Biotech in Pomona, CA. Before that, I received my master degree in computer science at the California State Polytechnic University, Pomona.</p>
+          <p class="lead">Welcome to my site, My name is Chris Harvey and lately I am a Software engineer at Advent Resources in San Pedro, CA. Previously, I worked as a php programmer at PSC Biotech in Pomona, CA. Before that, I received my master degree in computer science at the California State Polytechnic University, Pomona.</p>
           <p>During my job, I work on C, php and Javascript. I try to keep myself current with the new 
-           technologies and trends, seeking training where needed and participating in events. My main interests at the moment lie in back end and server side applications.</p>
+           technologies and trends, seeking training where needed and participating in events. My main interests at the moment lie in back end and server side applications and gain skills as a full stack engineer.</p>
           <p>I like blogging about computer science in general. I love building fast, performant, rock solid web interfaces/applications for the destktop and mobile.</p>
-          <p>I like challenges and I am eager to learn new things and to improve every day.</p>
+          <p>I enjoy and looks for challenging programming opportunities and good coffee. I am eager to learn new things and to improve every day.</p>
+          <p>In my free time I like to watch sports game, cook and reading.</p>
           <hr>
           
-          <div id="latest-blog-entries" class="row">
-            <h3>Latest Blog Entries</h3>  
-            {% for post in posts %} 
-            <div class="col-md-10">
-              <a href="{{ url_for('post.page', id=post.id)}}"><h4>{{ post.title }}</h4></a>
-            </div>
-            <div class="col-md-2">
-              <p class="blog-summary-date float-right">{{moment(post.timestamp).calendar()}}</p>
-            </div>
-            {% endfor %}
+          <div id="latest-blog-entries">
+			<h3>Latest Blog Entries</h3> 
+          	<ul class="posts-list">         
+				{% for post in posts %} 
+				<li class="post">
+					<a href="{{ url_for('post.page', id=post.id)}}">
+						<div class="post-title">{{ post.title }}</div>
+						<div class="post-extra">{{momentjs(post.timestamp).format('L')}}</div>
+					</a>
+				</li>					
+				{% endfor %}          		
+          	</ul>
           </div>
           <hr>
-
       </div>
 
   </div>

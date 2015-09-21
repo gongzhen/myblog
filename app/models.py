@@ -8,6 +8,3 @@ class Post(db.Model):
 	title_pic = db.Column(db.String(64), unique=True)
 	body = db.Column(db.Text)
 	timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-
-	
-		

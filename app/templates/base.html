@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- https://github.com/esbullington/flask-bootstrap/tree/master/app/static 
+<head>
+    <!-- 
+	http://wenzhixin.net.cn/
+    https://github.com/esbullington/flask-bootstrap/tree/master/app/static 
     http://geek4it.com/
     https://realpython.com/
     http://top.jobbole.com/
@@ -10,46 +12,48 @@
     http://adrianlange.com/
     http://charlesleifer.com/J
     -->
-    <title>{% block title %}{% endblock %} - My Webpage</title>
-    <!-- Website Title & Description for Search Engine purposes -->
-    <meta name="description" content="">
-    <!-- Mobile viewport optimized -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" >
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-    {% block extra_head %}
-    {% endblock %}
-  </head>
-  <body>
+	<title>{% block title %} My Webpage {% endblock %}</title>
+	<!-- Website Title & Description for Search Engine purposes -->
+	<meta name="description" content="hpmh">
+	<!-- Mobile viewport optimized -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" >
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/post.css') }}">
 
-    <div class="header">
-      <div class="navbar navbar-default">
-        <div class="container">      
-          <a href="/" class="navbar-brand"><img src="{{url_for('static', filename='images/logo.png')}}" alt="Your Logo"></a>          
-          <div class="pull-right collapse navbar-collapse navbar-responsive-collapse">
-            <ul class="nav nav-pills pull-right">
-              <li class="active">
-                <a href="{{url_for('home.index')}}">Home</a>
-              </li>
-              <li>
-                <a href="{{url_for('home.projects')}}">Projects</a>
-              </li> 
-              <li>
-                <a href="{{url_for('home.resume')}}">Resume</a>
-              </li>  
-              <li>
-                <a href="{{url_for('home.about')}}">About</a>
-              </li>              
-            </ul> 
-          </div><!--end nav-collapse-->     
-        </div><!--end container-->
-      </div><!--end navbar-->      
-    </div><!--end header--> 
+    <!-- Moment JS -->
+    <script src="{{ url_for('static', filename='js/moment.js')}}"></script>	
+	{% block extra_head %}
+	{% endblock %}
+</head>
+<body>
+<div class="header">
+	<div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+		<div class="navbar-inner">
+			<div class="container"> 
+				<div class="navbar-header">		         	
+		        	<a href="/" class="navbar-brand"><img src="{{url_for('static', filename='images/logo.png')}}" alt="Your Logo"></a>          
+	        	</div> <!--end navbar-header--> 
+	        	<div class="pull-right collapse navbar-collapse navbar-responsive-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="{{url_for('home.index')}}">Home</a></li>
+						<li><a href="{{url_for('home.projects')}}">Projects</a></li> 
+						<li><a href="{{url_for('home.resume')}}">Resume</a></li>  
+						<li><a href="{{url_for('home.about')}}">About</a></li>              
+					</ul> 
+	          	</div><!--end nav-collapse--> 	        	   
+	        </div><!--end container-->      		      		
+      	</div>
 
-    <div class="container" id="main">
-      {% block main %} {% endblock %}<!--end blockmain-->
+		</div><!--end navbar-->      
+	</div><!--end header--> 
+
+    <div class="wrapper" id="main">
+    	<div class="container">
+    		{% block main %} {% endblock %}<!--end blockmain-->
+    	</div>
     </div><!--end container-->
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -57,6 +61,8 @@
 
     <!-- Bootstrap JS -->
     <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
+
+
 
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/script.js')}}"></script>  
