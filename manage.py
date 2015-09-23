@@ -1,5 +1,5 @@
 from app import app, db
-from app.models import Post, Role, User
+from app.model.models import Post, Role, User
 from flask.ext.script import Manager, Shell, prompt_bool
 
 manager = Manager(app)

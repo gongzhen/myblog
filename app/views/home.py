@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, abort, redirect, url_for, request
-from app import models
-from ..models import Post
+from app.model import models
+from app.model.models import Post
 
 home = Blueprint('home', __name__)
 

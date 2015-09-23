@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from datetime import datetime
-from ..models import Post
+from app.model.models import Post
 from flask.ext.login import login_required, current_user
-from app import models
+from app.model import models
 from app.markdown import markdown
 from .. import db
 
