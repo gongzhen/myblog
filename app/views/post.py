@@ -48,4 +48,4 @@ def update_post(id):
 	db.session.add(post)
 	return redirect(url_for('.page', id = post.id))	
 
-	
+
