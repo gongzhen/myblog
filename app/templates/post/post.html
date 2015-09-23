@@ -15,13 +15,14 @@
 {% block main %}
 <div id="post" class="row">  
 	<div class="row">
-		<h2 class="blog-summary-date float-right">{{post.title}}</h2>
+		<h2>{{post.title}}</h2>
 		<a href="{{ url_for('.edit', id=post.id)}}"><h4>Edit</h4></a>
 	</div>
 	<div class="row">
-		<p class="blog-summary-date float-right">{{moment(post.timestamp).calendar()}}</p>
+		<p>{{momentjs(post.timestamp).format('L')}}</p>
 	</div>
 	<div class="row">
+	<hr>
     {% autoescape false %}
     	{{html}}
     {% endautoescape %}	

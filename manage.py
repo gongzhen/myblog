@@ -1,12 +1,12 @@
 from app import app, db
-from app.models import Post
+from app.models import Post, Role, User
 from flask.ext.script import Manager, Shell, prompt_bool
 
 manager = Manager(app)
 
 @manager.shell
 def make_shell_context():
-	return dict(app=app, Post = Post)
+	return dict(app=app, Post = Post, User=User, Role=Role)
 
 @manager.command
 def drop():

@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from datetime import datetime
 from ..models import Post
+from flask.ext.login import login_required, current_user
 from app import models
 from app.markdown import markdown
 from .. import db
@@ -19,6 +20,7 @@ def page(id):
 	return render_template('post/post.html', post=post, html = html)
 
 @post.route('/post/write')
+@login_required
 def write():
 	return render_template('post/write.html')
 
@@ -47,5 +49,3 @@ def update_post(id):
 	post.timestamp = datetime.utcnow()	
 	db.session.add(post)
 	return redirect(url_for('.page', id = post.id))	
-
-
