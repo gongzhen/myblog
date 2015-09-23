@@ -49,5 +49,3 @@ def update_post(id):
 	post.timestamp = datetime.utcnow()	
 	db.session.add(post)
 	return redirect(url_for('.page', id = post.id))	
-
-	
