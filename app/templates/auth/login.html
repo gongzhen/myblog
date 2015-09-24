@@ -1,5 +1,26 @@
 {% extends "base.html" %}
+
 {% block title %}auth.Login{% endblock %}
 {% block main %}
-<p>login</p>
+
+<div>
+	<form action="" method="POST" enctype="multipart/form-data">
+		{{form.hidden_tag()}}
+		<label>
+			username
+		</label>
+		<input type="text" name="username">
+		<br>
+		<label>
+			password
+		</label>	
+		<input type="password" name="password" />
+		<br>
+		<button type="submit" name="submit">
+			Submit
+		</button>
+		<p>{{form.remember_me}} Remember Me</p>
+	</form>
+</div>
+
 {% endblock %}
