@@ -3,22 +3,19 @@
 {% block title %}auth.Login{% endblock %}
 {% block main %}
 
-<div>
-	<form action="" method="POST" enctype="multipart/form-data">
+<div class="card card-container">
+	<form id="form-signin" class="text-left" action="{{url_for('auth.login')}}" method="POST" enctype="multipart/form-data">
 		{{form.hidden_tag()}}
-		<label>
-			username
-		</label>
-		<input type="text" name="username">
+		<div class="inputName" class="sr-only">{{ form.username.label }}</div>
+		<div placeholder="username" required autofocus>{{ form.username }}</div>
+		<div class="inputName" class="sr-only">{{ form.password.label }}</div>	
+		<div type="password" id="inputPassword" required />
+		{{ form.password }}
+		</div>
 		<br>
-		<label>
-			password
-		</label>	
-		<input type="password" name="password" />
-		<br>
-		<button type="submit" name="submit">
-			Submit
-		</button>
+		<div>
+			{{ form.submit }}
+		</div>	
 		<p>{{form.remember_me}} Remember Me</p>
 	</form>
 </div>

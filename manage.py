@@ -20,6 +20,21 @@ def create(default_data=True, sample_data=False):
 	db.create_all()
 
 @manager.command
+def insertadmin(default_data=True, sample_data=False):
+	"Insert roles into Role table"
+	Role.insert_roles()
+	admin_role = Role.query.filter_by(name='Administrator').first()
+	admin = User(username='admin', role_id=admin_role.id, password='admin')
+	db.session.add(admin)
+	db.session.commit()
+
+
+@manager.command
+def insertroles(default_data=True, sample_data=False):
+	"Insert roles into User table"
+	Role.insert_roles()	
+
+@manager.command
 def recreate(default_data=True, sample_data=False):
 	"Recreates database tables (same as issuing 'drop' and then 'create')"
 	drop()
