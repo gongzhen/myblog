@@ -6,6 +6,6 @@ from wtforms import ValidationError
 class LoginForm(Form):
 	username = StringField('Username', validators=[Required(), Length(1, 64)])
 	password = PasswordField('Password', validators=[Required()])
-	remeber_me = BooleanField('remember_me', default=False)
+	remember_me = BooleanField('remember_me', default=False)
 	submit = SubmitField('Log In')
 	
