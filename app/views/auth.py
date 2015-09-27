@@ -17,3 +17,9 @@ def login():
 		flash('Invalid username or password.')
 	return render_template('auth/login.html', form=form)
 
+@auth.route('/logout')
+def logout():
+    logout_user()
+    flash("You have been logged out.")
+    return redirect(url_for('home.index'))
+
