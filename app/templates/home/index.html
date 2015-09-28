@@ -6,13 +6,14 @@
   <div class="col-md-12">
     <!-- Blog Post Content Column -->
     <div class="content-unit">
-        <h3>Latest Blog Entries</h3> 
-        <ul class="posts-list">         
+
+        <ul class="posts-list">  
+          <h3>Latest Blog Entries</h3> 
           {% for post in posts %} 
           <div class="threadblock">
           <a href="{{ url_for('post.page', id=post.id)}}">
-            <div class="post-title">{{ post.title }}</div>
-            <div class="post-extra">{{momentjs(post.timestamp).format('L')}}</div>
+            <div class="posts-list-title">{{ post.title }}</div>
+            <div class="posts-list-extra">{{momentjs(post.timestamp).format('L')}}</div>
           </a>
           </div>         
           {% endfor %}              

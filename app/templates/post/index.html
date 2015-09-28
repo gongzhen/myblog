@@ -1,6 +1,37 @@
 {% extends "base.html" %}
 {% block title %}Post.Index{% endblock %}
-{% block main %}
-<p>POST</p>
+{% block extra_head %}
+{{super()}}
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- <link rel="stylesheet" href="{{url_for('static', filename='css/admin.css')}}" type="text/css" /> -->
+<link rel="stylesheet" href="{{url_for('static', filename='editor/editor.css')}}" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pygments.css') }}">
+
+<!-- Markdown JS -->
+<script type="text/javascript" src="{{url_for('static', filename='markdown/js/marked.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='editor/editor.js')}}"></script>
 {% endblock %}
 
+{% block main %}
+<div class="">  
+	<div class="post">
+		<div class="posts-content">
+			<div class="post-title">{{post.title}}</div>
+			
+
+			{% if current_user.is_authenticated() %}
+				<a href="{{ url_for('.edit', id=post.id)}}"><h4>Edit</h4></a>
+			{% endif %}
+			<div class="post-extra">{{momentjs(post.timestamp).format('L')}}	</div> 		
+			<hr>
+		    {% autoescape false %}
+		    	{{html}}
+		    {% endautoescape %}				
+		</div>
+
+		
+	</div>
+</div>
+
+
+{% endblock %}

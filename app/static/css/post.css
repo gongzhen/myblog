@@ -7,6 +7,20 @@
     margin-bottom: 30px;
 }
 
+.posts-list-title{
+    position: absolute;
+    left: 140px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.posts-list-extra{
+    position: absolute;
+    padding-left: 0px;
+    width: 120px;
+}
+
 .post {
     position: relative;
     padding:10px 10px 10px 10px;  
@@ -18,20 +32,17 @@
 }
 
 .post-title {
-    position: absolute;
-    left: 140px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;	
+    margin: 10px 0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 20px;
+    text-rendering: optimizelegibility;	
+    font-size: 20px;
 }
 
 .post-extra {
-    position: absolute;
-    padding-left: 0px;
-    width: 120px;
+    position: relative;
 }
-
-
 
 .posts-content {
     padding: 10px 10px 20px 20px;

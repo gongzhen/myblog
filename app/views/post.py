@@ -9,7 +9,7 @@ from .. import db
 post = Blueprint('post', __name__)
 
 # http://stackoverflow.com/questions/7974771/flask-blueprint-template-folder
-@post.route('/post/index', methods=['GET', 'POST'])
+@post.route('/post/index')
 def index():
 	return render_template('post/index.html')
 
