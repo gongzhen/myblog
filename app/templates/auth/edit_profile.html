@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}auth.Login{% endblock %}
+{% block main %}
+
+<div>
+	<form>
+    	<div class="inputName" class="sr-only">{{ form.username.label }}</div>
+    	<div placeholder="username" id="inputName" required autofocus>{{ form.username }}</div>
+    	
+    	<div class="inputRole" class="sr-only">{{ form.role.label }}</div>
+    	<div placeholder="role" id="inputRole" required autofocus>{{ form.role }}</div>
+    	<div class="inputConfirmed" class="sr-only">{{ form.confirmed.label }}</div>
+    	<div>{{ form.submit.label }}</div>
+	</form>
+
+</div>
+
+{% endblock %}

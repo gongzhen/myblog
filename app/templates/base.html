@@ -36,14 +36,13 @@
 				<div class="navbar-header">		         	
 		        	<a href="/" class="navbar-brand"><img src="{{url_for('static', filename='images/logo.png')}}" alt="Your Logo"></a>          
 	        	</div> <!--end navbar-header--> 
-	        	<div class="pull-left collapse navbar-collapse navbar-responsive-collapse">
+	        	<div class="pull-right collapse navbar-collapse navbar-responsive-collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="{{url_for('home.index')}}">Home</a></li>
-						<li><a href="{{url_for('home.projects')}}">Projects</a></li> 
-						<li><a href="https://drive.google.com/file/d/0B3wGJbnS4Svza1ZkeUNqX1FfTTA/view?usp=sharing">Resume</a></li>  
+						<li><a href="{{url_for('home.projects')}}">Projects</a></li>  
 						<li><a href="{{url_for('home.about')}}">About</a></li>
 						{% if current_user.is_authenticated() %}
-						<li><a href="username"> {% print current_user.username %}</a></li>
+						<li><a href="{{url_for('auth.user', username=current_user.username)}}"> {% print current_user.username %}</a></li>
 						<li><a href="{{ url_for('auth.logout') }}">Log out</a></li>
 						{% else %}
 						<li><a href="{{ url_for('auth.login') }}">Log In</a></li>
@@ -61,7 +60,9 @@
     		{% block main %} {% endblock %}<!--end blockmain-->
     	</div>
     </div><!--end container-->
-    
+
+    {% block footer %} 
+    {% endblock %}
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 

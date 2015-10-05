@@ -10,9 +10,6 @@
 .posts-list-title{
     position: absolute;
     left: 140px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 .posts-list-extra{
@@ -50,8 +47,10 @@
 
 .threadblock{
     padding-top: 10px;
-    padding-bottom: 10px;
-    border-top: #D0D0D0 dashed 1px;    
+    padding-bottom: 30px;
+    border-top: #D0D0D0 dashed 1px;
+    min-height:60px;
+    overflow: hidden;
 }
 
 

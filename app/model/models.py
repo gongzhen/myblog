@@ -26,7 +26,6 @@ class Role(db.Model):
 			db.session.add(role)
 		db.session.commit()
 
-
 class User(UserMixin, db.Model):
 	__tablename__ = 'users'
 	id = db.Column(db.Integer, primary_key=True)
@@ -54,12 +53,11 @@ class User(UserMixin, db.Model):
 class Post(db.Model):
 	__tablename__= 'posts'
 	id = db.Column(db.Integer, primary_key = True)
-	title =db.Column(db.String(64), unique=True)
-	title_pic = db.Column(db.String(64), unique=True)
+	title =db.Column(db.String(64), unique=False)
+	title_pic = db.Column(db.String(64), unique=False)
 	body = db.Column(db.Text)
 	timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 	author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-
 
 @login_manager.user_loader
 def load_user(user_id):

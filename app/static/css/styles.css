@@ -16,8 +16,6 @@ body {
 /* --------------------------------------
    Layout
   --------------------------------------- */
-
-
 .header {
   margin-left:auto;
   margin-right:auto;
@@ -26,26 +24,34 @@ body {
 
 .home-bottom {
   display:table;
-  table-layout:fixed;
-  width:100%;
   height:200px;
   border:none;
-  margin-top:25px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom:50px;
-  padding-left: 15px;
+  border-radius: 6px;  
+  margin-top:50px;
+  margin-right: auto;
+  table-layout: fixed;
+  width: 100%;
+  max-width: 980px;
 }
 
-.home-bottom-box {
+
+.home-bottom-box {  
   display:table-cell;
   background:#fff;
   padding:20px;
   border-radius: 6px;
-  margin-right: 10px;
-  width: 310px;
-  height: 350px;
+  height: 380px;
+  border-right: 10px solid #ccc;
 }
+
+.home-bottom-box:last-child {
+    border-right: none;
+}
+
+#footer:last-child, home-bottom-box {
+  margin-right: 0px;
+}
+
 
 .clickable {
    cursor: pointer;
@@ -53,6 +59,11 @@ body {
 
 .wrapper {
 	margin-top: 60px;
+}
+
+.row > .col-md-4{
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 /* --------------------------------------
@@ -112,8 +123,7 @@ body {
   -------------------------------------- */
 
 body{
-   -webkit-font-smoothing: antialiased; /* http://maxvoltar.com/sandbox/fontsmoothing/ */   
-   text-rendering:optimizelegibility;
+   -webkit-font-smoothing: antialiased;  
    font-size: 2.2em;
 }
 
@@ -135,6 +145,7 @@ body{
 #about {
   margin-top: 60px;
 }
+
 
 
 img.thumbnail {
@@ -237,6 +248,7 @@ label {
 
 .form-signin input[type=username],
 .form-signin input[type=password],
+.form-signin input[type=inputResume],
 .form-signin input[type=text],
 .form-signin button {
     width: 100%;
@@ -305,28 +317,7 @@ label {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
-   #myCarousel .item{ height:310px; }
 
-   #slide1 {
-      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
-   }
-
-   #slide2 {
-      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
-   }
-
-   #slide3 {
-      background: url('../../images/carousel_large_01.jpg') top center no-repeat;
-   }
-
-   /* for mobile devices */
-   .carousel-caption {
-      font-size: 16px;
-   }
-
-   .carousel-caption h4{
-      font-size: 22px;
-   }
 
 }
 
@@ -340,5 +331,10 @@ label {
 
 	.container {
 	    width: 990px;
-	}		
+	}	
+
+  .row >.col-md-4 {
+    width: 30%;
+  }
+
 }

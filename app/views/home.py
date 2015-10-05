@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, abort, redirect, url_for, request
 from app.model import models
 from app.model.models import Post
+from .. import db
 
 home = Blueprint('home', __name__)
 
@@ -16,10 +17,6 @@ def about():
 @home.route('/projects')
 def projects():
     return render_template('home/projects.html')
-
-@home.route('/resume')
-def resume():
-    return render_template('home/resume.html')
 
 @home.route('/contacts')
 def contacts():

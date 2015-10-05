@@ -9,6 +9,7 @@ from flask.ext.misaka import Misaka
 from .momentjs import momentjs
 from flask.ext.login import LoginManager
 
+
 moment = Moment()
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -24,6 +25,8 @@ db.init_app(app)
 moment.init_app(app)
 Misaka(app)
 login_manager.init_app(app)
+
+
 app.jinja_env.globals['momentjs'] = momentjs
 
 from views.home import home as home_blueprint
