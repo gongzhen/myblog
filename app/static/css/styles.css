@@ -1,26 +1,68 @@
-/*
+/* -------------------------------------------- */
+/* ------------------Reset--------------------- */
+a,abbr,acronym,address,applet,article,aside,audio,b,blockquote,big,body,center,canvas,caption,cite,code,command,datalist,dd,del,details,dfn,dl,div,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,keygen,label,legend,li,meter,nav,object,ol,output,p,pre,progress,q,s,samp,section,small,span,source,strike,strong,sub,sup,table,tbody,tfoot,thead,th,tr,tdvideo,tt,u,ul,var{background:transparent;border:0 none;font-size:100%;margin:0;padding:0;border:0;outline:0;vertical-align:top;}ol, ul {list-style:none;}blockquote, q {quotes:none;}table, table td {padding:0;border:none;border-collapse:collapse;}img {vertical-align:top;}embed {vertical-align:top;}
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block;}
 
-My Custom CSS
-=============
 
-Author:  Brad Hussey
-Updated: August 2013
-Notes:	 Hand coded for Udemy.com
+/* -------------------------------------------- */
+/* ------------------Clear--------------------- */
+.clear{content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
 
-*/
 
-body {
-    background-color: #ccc;
-}
+/* -------------------------------------------- */
+/* ------------------Style--------------------- */
+html, body {width:100%; padding:0; margin:0;}
+body { background-color: #ccc; color: #474747; font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 25px;}
+
+h1,h2,h3,h4,h5,h6{ font-family: 'Montserrat', sans-serif; text-transform:uppercase; font-weight:700; line-height:1.4em; color: #474747; }
+h1{ font-size:30px; }
+h2{ font-size:25px; }
+h3{ font-size:20px; }
+h4{ font-size:18px; }
+h5{ font-size:16px; }
+h6{ font-size:14px; }
+
+h1 a, h2 a, h3 a, h4 a{color: #474747; text-decoration: none;}
+
+/* -------------------------------------------- */
+/* ------------------Header-------------------- */
+header {background:#333333; margin-bottom:30px;}
+header .wrap-header{height: 80px;}
+
+header #logo {float: left; margin: 10px;}
+
+/* -------------------------------------------- */
+/* ------------------Navigation---------------- */
+nav {}
+
+.menu ul {list-style: none;margin: 0;padding: 0;}
+.menu  ul li a {font-size: 14px; z-index: 6;position: relative;font-weight:bold; text-transform:uppercase;}
+
+/* -------------------------------------------- */
+/* ------------------Content------------------- */
+#content .wrap-col{width: 100%;}
+
+#main-content{}
+#main-content article {margin:10px 0px; background:#ffffff;}
+#main-content article .heading{ padding: 30px 40px;}
+#main-content article .heading .title{text-transform: uppercase; font-weight: bold;}
+#main-content article .heading .title2{font-size: 16px; line-height: 20px;}
+#main-content article img{display: inline-block; width: 100%;}
+#main-content article .content{padding: 30px 40px;font-size: 16px;}
+#main-content article p{margin-bottom:10px;}
+#main-content article .extra{background: #2ECC71; padding: 10px 20px;font-size: 16px;}
+#main-content article .more {float: right;}
+#main-content article .info{float: left; color: #ffffff;}
+#main-content article .info a{text-decoration: underline; color:#ffffff;}
+
+
+/* -------------------------------------------- */
+/* ------------------Style--------------------- */
 
 /* --------------------------------------
    Layout
   --------------------------------------- */
-.header {
-  margin-left:auto;
-  margin-right:auto;
-  margin-bottom: 0;
-}
+
 
 .home-bottom {
   display:table;
@@ -47,11 +89,6 @@ body {
 .home-bottom-box:last-child {
     border-right: none;
 }
-
-#footer:last-child, home-bottom-box {
-  margin-right: 0px;
-}
-
 
 .clickable {
    cursor: pointer;
@@ -156,12 +193,6 @@ img.thumbnail {
   font-size: 0.8em;
 }
 
-a{
-  font-size: 15px;
-  color: #428bca;
-  font-family: arial, sans-serif;
-}
-
 .CodeMirror-scroll {
 	background-color:#FFFFFF;
 }
@@ -190,10 +221,10 @@ label {
  ---------------------------------------- */
 
 .navbar-inverse {
-    color: #fff;
+/*    color: #fff;
     text-align: center;
     background-color: #159957;
-    background-image: linear-gradient(120deg, #155799, #159957);
+    background-image: linear-gradient(120deg, #155799, #159957);*/
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {

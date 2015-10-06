@@ -28,52 +28,59 @@
 	{% block extra_head %}
 	{% endblock %}
 </head>
-<body>
-<div class="header">
-	<div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
-		<div class="navbar-inner">
-			<div class="container"> 
-				<div class="navbar-header">		         	
-		        	<a href="/" class="navbar-brand"><img src="{{url_for('static', filename='images/logo.png')}}" alt="Your Logo"></a>          
-	        	</div> <!--end navbar-header--> 
-	        	<div class="pull-right collapse navbar-collapse navbar-responsive-collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="{{url_for('home.index')}}">Home</a></li>
-						<li><a href="{{url_for('home.projects')}}">Projects</a></li>  
-						<li><a href="{{url_for('home.about')}}">About</a></li>
-						{% if current_user.is_authenticated() %}
-						<li><a href="{{url_for('auth.user', username=current_user.username)}}"> {% print current_user.username %}</a></li>
-						<li><a href="{{ url_for('auth.logout') }}">Log out</a></li>
-						{% else %}
-						<li><a href="{{ url_for('auth.login') }}">Log In</a></li>
-						{% endif %}        
-					</ul>
-	          	</div><!--end nav-collapse--> 	        	   
-	        </div><!--end container-->     		      		
-      	</div>
+<body>	
+	<div class="wrap-body">
+	<header>
+		<div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+			<div class="navbar-inner">
+				<div class="container"> 
+					<div class="navbar-header">		         	
+			        	<a href="/" class="navbar-brand"><img src="{{url_for('static', filename='images/logo.png')}}" alt="Your Logo"></a>          
+		        	</div> <!--end navbar-header-->
+		        	<div class="menu">
+			        	<div class="pull-right collapse navbar-collapse navbar-responsive-collapse">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="{{url_for('home.index')}}">Home</a></li>
+								<li><a href="{{url_for('home.projects')}}">Projects</a></li>  
+								<li><a href="{{url_for('home.about')}}">About</a></li>
+								{% if current_user.is_authenticated() %}
+								<li><a href="{{url_for('auth.user', username=current_user.username)}}"> {% print current_user.username %}</a></li>
+								<li><a href="{{ url_for('auth.logout') }}">Log out</a></li>
+								{% else %}
+								<li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+								{% endif %}        
+							</ul>
+			          	</div><!--end nav-collapse-->
+		        	</div>
+ 	        	   
+		        </div><!--end container-->     		      		
+	      	</div>
 
 		</div><!--end navbar-->      
-	</div><!--end header--> 
+	</header>
 
-    <div class="wrapper" id="main">
-    	<div class="container">
-    		{% block main %} {% endblock %}<!--end blockmain-->
-    	</div>
-    </div><!--end container-->
+	<section id="content">
+	    <div class="wrapper" id="main">
+	    	<div class="container">
+	    		{% block main %} {% endblock %}<!--end blockmain-->
+	    	</div>
+	    </div><!--end container-->
+	</section>
 
     {% block footer %} 
     {% endblock %}
+
+	</div><!---end wrap-body --> 
+	   
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js')}}"></script>
 
-
-
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/script.js')}}"></script>  
-    </body>
-  </html>
+</body>
+</html>
 
 

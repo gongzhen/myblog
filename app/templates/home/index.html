@@ -2,22 +2,31 @@
 {% block title %}Index{% endblock %}
 {% block main %}
 
-<div class="row">
-  <div class="col-md-12">
+<div id ="main-content" class="col-md-12">
+  <div class="row">
     <!-- Blog Post Content Column -->
     <div class="content-unit">
-
-        <ul class="posts-list">  
-          <h3>Latest Blog Entries</h3> 
+      <div class="wrap-col">
           {% for post in posts %} 
-          <div class="threadblock">
-          <a href="{{ url_for('post.page', id=post.id)}}">
-            <div class="posts-list-title">{{ post.title }}</div>
-            <div class="posts-list-extra">{{momentjs(post.timestamp).format('L')}}</div>
-          </a>
-          </div>         
+          <article>
+            <div class="heading">
+              <h2 class="title" style="text-transform:none;">
+              <a href="{{ url_for('post.page', id=post.id)}}">{{ post.title }}</a>
+              </h2>
+            </div>
+            <div class="content">
+              Setting up a Flask application on an EC2 Ubuntu instance with Apache and mod_wsgi
+            </div> 
+            <div class="extra">
+              <div class="info">
+              {{momentjs(post.timestamp).format('L')}}
+              </div>              
+            <div class="clear"></div>
+            </div>
+          
+          </article>
           {% endfor %}              
-        </ul>  
+      </div>
     </div>
   </div>
 </div>
