@@ -44,7 +44,7 @@ nav {}
 
 #main-content{}
 #main-content article {margin:10px 0px; background:#ffffff;}
-#main-content article .heading{ padding: 30px 40px;}
+#main-content article .heading{ padding: 20px 40px;}
 #main-content article .heading .title{text-transform: uppercase; font-weight: bold;}
 #main-content article .heading .title2{font-size: 16px; line-height: 20px;}
 #main-content article img{display: inline-block; width: 100%;}
@@ -57,38 +57,18 @@ nav {}
 
 
 /* -------------------------------------------- */
-/* ------------------Style--------------------- */
+/* ------------------Footer-------------------- */
+footer {background-color:#333333; margin-top:30px;}
+footer .home-bottom{display: table; height: 200px; border: none; border-radius: 6px;margin-top: 50px; margin-bottom: 50px;}
+footer .home-bottom .home-bottom-box {display: table-cell; background: #fff; padding: 20px; border-radius: 6px; height: 380px;}
+footer .home-bottom .home-bottom-box:first-child{ margin-left: 0px;}
+footer .home-bottom .col-md-offset-2 { margin-left: 10px;}
 
-/* --------------------------------------
-   Layout
-  --------------------------------------- */
+footer .home-bottom .col-md-4 {width:32.636%;}
+footer .home-bottom-box .heading {padding: 5px;}
+footer .home-bottom-box .heading .title{color: #808080;padding: 0; margin-top: 0; margin-bottom: 10px;}
 
-
-.home-bottom {
-  display:table;
-  height:200px;
-  border:none;
-  border-radius: 6px;  
-  margin-top:50px;
-  margin-right: auto;
-  table-layout: fixed;
-  width: 100%;
-  max-width: 980px;
-}
-
-
-.home-bottom-box {  
-  display:table-cell;
-  background:#fff;
-  padding:20px;
-  border-radius: 6px;
-  height: 380px;
-  border-right: 10px solid #ccc;
-}
-
-.home-bottom-box:last-child {
-    border-right: none;
-}
+footer .home-bottom-box .content{padding:10px; font-size: 16px;}
 
 .clickable {
    cursor: pointer;

@@ -1,46 +1,56 @@
-<div class="container" id="footer">
-<div class="home-bottom">
-    <div class="col-md-4 home-bottom-box">
-      <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:10px;">Follow me</h3>
-      <div id="contact">Follow me on your favourite social media. I am not always active on all of them though.</div> 
-      <div style="margin-top:15px;">
-        {% set sns_links = [
-        ('facebook', 'https://www.facebook.com/gongzhen'),
-        ('weibo', 'http://www.weibo.com/1760933442/profile?topnav=1&wvr=5&user=1'),
-        ('twitter', 'https://twitter.com/gong_zhen'),
-        ('quora', 'http://www.quora.com/Gong-Zhen-2/'),
-        ('github', 'https://github.com/gongzhen'),
-        ('linkedin', 'https://www.linkedin.com/profile/view?id=137631356&trk=nav_responsive_tab_profile'),
-        ('flickr', ''),
-        ('500px', ''),
-        ('gplus', 'https://plus.google.com/u/0/'),
-        ('zhihu', 'http://www.zhihu.com/people/gong-zhen-58'),
-        ] %}
+<footer>
+<div id="footer" class="container">
+  <div class="home-bottom">
+      <div class="col-md-4 col-md-offset-2 home-bottom-box">
+        <div class="heading">
+          <h3 class="title">
+            Follow me          
+          </h3>
+        </div>
+        <div class="content">Follow me on your favourite social media. I am not always active on all of them though.</div> 
+        <div style="margin-top:15px;">
+          {% set sns_links = [
+          ('facebook', 'https://www.facebook.com/gongzhen'),
+          ('weibo', 'http://www.weibo.com/1760933442/profile?topnav=1&wvr=5&user=1'),
+          ('twitter', 'https://twitter.com/gong_zhen'),
+          ('quora', 'http://www.quora.com/Gong-Zhen-2/'),
+          ('github', 'https://github.com/gongzhen'),
+          ('linkedin', 'https://www.linkedin.com/profile/view?id=137631356&trk=nav_responsive_tab_profile'),
+          ('flickr', ''),
+          ('500px', ''),
+          ('gplus', 'https://plus.google.com/u/0/'),
+          ('zhihu', 'http://www.zhihu.com/people/gong-zhen-58'),
+          ] %}
 
-        {% for (id, link) in sns_links %}
-        <div style="display:inline-block;margin-right:10px;margin-bottom:10px;line-height:1em;" class="clickable"><a href="{{ link }}" style="border:0;margin:0;width:40px;height:40px;padding:0;"><img alt="{{ id }}" src="http://static.dheera.net/icons/{{ id }}.gif" style="padding:0;margin:0;width:40px;height:40px;"></a></div>
-        {% endfor %}
-      </div>
-    </div>        
+          {% for (id, link) in sns_links %}
+          <div style="display:inline-block;margin-right:10px;margin-bottom:10px;line-height:1em;" class="clickable"><a href="{{ link }}" style="border:0;margin:0;width:40px;height:40px;padding:0;"><img alt="{{ id }}" src="http://static.dheera.net/icons/{{ id }}.gif" style="padding:0;margin:0;width:40px;height:40px;"></a></div>
+          {% endfor %}
+        </div>
+      </div>        
+      <div class="col-md-4 col-md-offset-2 home-bottom-box">
+        <div class="heading">
+        <h3 class="title">
+          News
+        </h3>
+        </div>
+        <div id="content">
+          <div class="panel panel-default">
+            <div class="panel-body">  
+            <iframe width="100%" height="230" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1760933442&verifier=a7c00b5e&colors=d6f3f7,ffffff,666666,0082cb,ecfbfd&dpc=1"></iframe>
+            </div>
+          </div>    
+        </div>
+      </div>                
+      <div class="col-md-4 col-md-offset-2 home-bottom-box">
+        <div class="heading">
+          <h3 class="title">Contact me</h3>
+        </div>
+        <div class="content">
+          The easiest way to reach me is by e-mail at <b>gongzhengz at gmail dot com</b>
+          My resume is available <a href="https://drive.google.com/file/d/0B3wGJbnS4SvzRmpUX1lTM2MzVTA/view?usp=sharing">here</a>          
+        </div>
+      </div> 
+  </div>
+</div>   
+</footer>
 
-    <div class="col-md-4 home-bottom-box">
-      <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:10px;">News</h3>
-      <div id="contact">
-
-        <div class="panel panel-default">
-          <div class="panel-body">  
-          <iframe width="100%" height="230" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1760933442&verifier=a7c00b5e&colors=d6f3f7,ffffff,666666,0082cb,ecfbfd&dpc=1"></iframe>
-          </div>
-        </div>    
-      </div>
-    </div>                
-
-    <div class="col-md-4 home-bottom-box">
-      <h3 style="color:#808080;padding:0;margin-top:0;margin-bottom:10px;">Contact me</h3>
-      <div id="contact">
-        The easiest way to reach me is by e-mail at <b>gongzhengz at gmail dot com</b>
-        My resume is available <a href="https://drive.google.com/file/d/0B3wGJbnS4SvzRmpUX1lTM2MzVTA/view?usp=sharing">here</a>          
-      </div>
-    </div> 
-</div>
-</div> 
