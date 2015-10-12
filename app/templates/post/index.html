@@ -15,18 +15,7 @@
 {% block main %}
 <div class="">  
 	<div class="post">
-		<div class="posts-content">
-			<div class="post-title">{{post.title}}</div>
-			
-
-			{% if current_user.is_authenticated() %}
-				<a href="{{ url_for('.edit', id=post.id)}}"><h4>Edit</h4></a>
-			{% endif %}
-			<div class="post-extra">{{momentjs(post.timestamp).format('L')}}	</div> 		
-			<hr>
-		    {% autoescape false %}
-		    	{{html}}
-		    {% endautoescape %}				
+		<div class="posts-content">			
 		</div>
 
 		

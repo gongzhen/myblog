@@ -21,15 +21,20 @@
 			<input type="hidden" name="published" id="published" value=0 />
 			<textarea name="body" id="editor" placeholder="Content here ...">{{post.body}}</textarea>
 			<p class="write-btn-box">
+
 			<button type="submit" class="btn-white" onclick="preview(); return false;" >
 			<span class="icon-eye">Preview</span>
 			</button>
 			<button type="submit" class="btn-white" onclick="save_to_draft();" >
 			<span class="icon-disk">Save as draft</span>
 			</button>
+		    <button type="submit" class="btn-white" onclick="drop_post(); return false;">
+		      <span class="icon-remove">Drop</span>
+		    </button>			
 			<button type="submit" class="btn-blue" onclick="do_a_save();" >
 			<span class="icon-blog">Publish</span>
 			</button>
+
 			</p>
 		</form>
 	</div>
@@ -48,6 +53,19 @@
     form.published.value = 0;
     form.submit()
   };
+
+  var drop_post = function() {
+    if (confirm("Are you sure to delete this post ?")) {
+        do_drop_post();
+    }
+    return false;
+  }
+
+  var do_drop_post = function () {
+    form.target = '_self';
+    form.action = '{{url_for("post.delete", id=post.id)}}';
+    form.submit();
+  }
 
 </script>
 {% endblock %}

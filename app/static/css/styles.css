@@ -26,7 +26,7 @@ h1 a, h2 a, h3 a, h4 a{color: #474747; text-decoration: none;}
 
 /* -------------------------------------------- */
 /* ------------------Header-------------------- */
-header {background:#333333; margin-bottom:30px;}
+header {background:#333333; margin-bottom:80px;}
 header .wrap-header{height: 80px;}
 
 header .navbar-brand { padding:0px 0px;}
@@ -36,17 +36,11 @@ header .navbar-brand { padding:0px 0px;}
 nav {}
 
 .menu ul {list-style: none;margin: 0;padding: 0;}
-.menu  ul li a {font-size: 14px; z-index: 6;position: relative;font-weight:bold; text-transform:uppercase;
-    padding: 15px 25px;
-}
+.menu  ul li a {font-size: 14px; z-index: 6;position: relative;font-weight:bold; text-transform:uppercase; padding: 15px 25px;}
 
 .menu .navbar-nav>.active>a, 
 .menu .navbar-nav>.active>a:focus, 
-.menu .navbar-nav>.active>a:hover {
-    color: #fff;
-    background-color: #155799;
-}
-
+.menu .navbar-nav>.active>a:hover { color: #fff; background-color: #155799; }
 
 /* -------------------------------------------- */
 /* ------------------Content------------------- */
@@ -54,7 +48,7 @@ nav {}
 
 #main-content{}
 #main-content article {margin:10px 0px; background:#ffffff;}
-#main-content article .heading{ padding: 20px 40px;}
+#main-content article .heading{ padding: 20px 20px;}
 #main-content article .heading .title{text-transform: uppercase; font-weight: bold;}
 #main-content article .heading .title2{font-size: 16px; line-height: 20px;}
 #main-content article img{display: inline-block; width: 100%;}
@@ -65,27 +59,31 @@ nav {}
 #main-content article .info{float: left; color: #ffffff;}
 #main-content article .info a{text-decoration: underline; color:#ffffff;}
 
+#main-content .post { position: relative; padding:10px 10px; border-radius: 6px; box-shadow: 0 0px 2px rgba(0,0,0,0.05); background-color:  #fff;}
+#main-content .post p {margin: 15px 0; word-spacing: 1px;}
+#main-content .post .post-title {
+    margin: 10px 0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 40px;
+    text-rendering: optimizelegibility; 
+    font-size: 2em;
+
+}
+#main-content .content-unit{ padding: 10px; margin-bottom: 30px; color: inherit; border-radius: 6px; box-shado: 0 0px 2px rgba(0,0,0,0.05); background-color: #fff;}
 
 /* -------------------------------------------- */
 /* ------------------Footer-------------------- */
+footer .row {margin-top: 35px;}
+footer .col-sm-4 .panel {padding: 15px; height: 330px;}
+footer .col-sm-4 .panel .panel {padding: 0px;}
+/*footer .col-sm-4 .panel{height:400px;}*/
+footer .panel-body{padding: 0px;}
+footer .heading {margin: -15px -15px 15px;}
 footer {background-color:#333333; margin-top:30px;}
-footer .home-bottom{display: table; height: 200px; border: none; border-radius: 6px;margin-top: 50px; margin-bottom: 50px;}
-footer .home-bottom .home-bottom-box {display: table-cell; background: #fff; padding: 20px; border-radius: 6px; height: 380px;}
-footer .home-bottom .home-bottom-box:first-child{ margin-left: 0px;}
-footer .home-bottom .col-md-offset-2 { margin-left: 10px;}
-
-footer .home-bottom .col-md-4 {width:32.636%;}
-footer .home-bottom-box .heading {padding: 5px;}
-footer .home-bottom-box .heading .title{color: #808080;padding: 0; margin-top: 0; margin-bottom: 10px;}
-
-footer .home-bottom-box .content{padding:10px; font-size: 16px;}
 
 .clickable {
    cursor: pointer;
-}
-
-.wrapper {
-	margin-top: 60px;
 }
 
 .row > .col-md-4{
@@ -149,18 +147,6 @@ footer .home-bottom-box .content{padding:10px; font-size: 16px;}
    Typography
   -------------------------------------- */
 
-
-.content-unit{
-  padding: 10px;
-  margin-bottom: 30px;
-  color: inherit;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  box-shadow: 0 0px 2px rgba(0,0,0,0.05);
-  background-color: #fff;
-}
-
 .content-unit p{
   font-size: 0.8em;
 }
@@ -211,7 +197,6 @@ label {
 /* --------------------------------------
    Sign-in
 -----------------------------------------*/
-
 .card-container.card {
     max-width: 350px;
     padding: 40px 40px;
@@ -283,27 +268,10 @@ label {
 #submit:focus {
     background-color: rgb(0, 68, 204);
 }
-/*=Post Loop 
--------------------------------------------------------------- */
 
 
-/* =Post Loop  : Date and Comments 
--------------------------------------------------------------- */
-
-
-/* =Post Loop  : Corners 
--------------------------------------------------------------- */
-
-
-/* --------------------------------------
-   Global Styles
-   -------------------------------------- */
-
-
-
-/* --------------------------------------
-   Media Queries
-   -------------------------------------- */
+/* -------------------------------------------- */
+/* ---------------Media Queries---------------- */
 
 /* Portrait & landscape phone */
 @media (max-width: 480px) {
@@ -312,7 +280,6 @@ label {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
-
 
 }
 

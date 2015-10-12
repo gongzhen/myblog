@@ -1,13 +1,15 @@
 <footer>
 <div id="footer" class="container">
-  <div class="home-bottom">
-      <div class="col-md-4 col-md-offset-2 home-bottom-box">
-        <div class="heading">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel">
+        <div class="panel-heading heading">
           <h3 class="title">
             Follow me          
           </h3>
         </div>
-        <div class="content">Follow me on your favourite social media. I am not always active on all of them though.</div> 
+        <p>Follow me on your favourite social media. I am not always active on all of them though.
+        </p> 
         <div style="margin-top:15px;">
           {% set sns_links = [
           ('facebook', 'https://www.facebook.com/gongzhen'),
@@ -26,30 +28,33 @@
           <div style="display:inline-block;margin-right:10px;margin-bottom:10px;line-height:1em;" class="clickable"><a href="{{ link }}" style="border:0;margin:0;width:40px;height:40px;padding:0;"><img alt="{{ id }}" src="http://static.dheera.net/icons/{{ id }}.gif" style="padding:0;margin:0;width:40px;height:40px;"></a></div>
           {% endfor %}
         </div>
-      </div>        
-      <div class="col-md-4 col-md-offset-2 home-bottom-box">
-        <div class="heading">
-        <h3 class="title">
-          News
-        </h3>
+      </div>
+    </div>        
+    <div class="col-sm-4">
+      <div class="panel">
+        <div class="panel-heading heading">
+          <h3 class="title">
+            News
+          </h3>
         </div>
-        <div id="content">
-          <div class="panel panel-default">
-            <div class="panel-body">  
-            <iframe width="100%" height="230" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1760933442&verifier=a7c00b5e&colors=d6f3f7,ffffff,666666,0082cb,ecfbfd&dpc=1"></iframe>
-            </div>
-          </div>    
-        </div>
-      </div>                
-      <div class="col-md-4 col-md-offset-2 home-bottom-box">
-        <div class="heading">
+        <div class="panel-default">
+          <div class="panel-body">  
+          <iframe width="100%" height="230" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1760933442&verifier=a7c00b5e&colors=d6f3f7,ffffff,666666,0082cb,ecfbfd&dpc=1"></iframe>
+          </div>
+        </div>           
+      </div>
+    </div>                
+    <div class="col-sm-4">
+      <div class="panel">
+        <div class="panel-heading heading">
           <h3 class="title">Contact me</h3>
         </div>
-        <div class="content">
+        <p>
           The easiest way to reach me is by e-mail at <b>gongzhengz at gmail dot com</b>
           My resume is available <a href="https://drive.google.com/file/d/0B3wGJbnS4SvzRmpUX1lTM2MzVTA/view?usp=sharing">here</a>          
-        </div>
-      </div> 
+        </p>                
+      </div>
+    </div> 
   </div>
 </div>   
 </footer>

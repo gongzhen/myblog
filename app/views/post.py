@@ -9,11 +9,11 @@ from .. import db
 post = Blueprint('post', __name__)
 
 # http://stackoverflow.com/questions/7974771/flask-blueprint-template-folder
-@post.route('/post/index')
+@post.route('/post')
 def index():
 	return render_template('post/index.html')
 
-@post.route('/post/<int:id>')
+@post.route('/post/<int:id>', methods=['GET'])
 def page(id):
 	post = models.Post.query.get_or_404(id);
 	html = markdown.render(post.body) 
@@ -49,3 +49,12 @@ def update_post(id):
 	post.timestamp = datetime.utcnow()	
 	db.session.add(post)
 	return redirect(url_for('.page', id = post.id))	
+
+@post.route('/post/delete/<int:id>', methods=['POST'])
+@login_required
+def delete(id):
+	post = models.Post.query.get_or_404(id)
+	print post.title
+	db.session.delete(post)
+	db.session.commit()
+	return redirect(url_for('.index'))
