@@ -1,17 +1,20 @@
-from app import app, db
+#!/usr/bin/env python
+import os
+from app import create_app, db
 from app.model.models import Post, Role, User
 from flask.ext.script import Manager, Shell, prompt_bool
 from flask.ext.migrate import Migrate, MigrateCommand
 
-
+app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 manager = Manager(app)
+migrate = Migrate(app, db)
 
 @manager.shell
 def make_shell_context():
-	return dict(app=app, Post = Post, User=User, Role=Role)
-migrate = Migrate(app, db)
+	return dict(app=app, Post = Post, User=User, Role=Role, db=db)
 
 manager.add_command('db', MigrateCommand)
+manager.add_command("shell", Shell(make_context=make_shell_context))
 
 @manager.command
 def drop():
@@ -43,10 +46,6 @@ def recreate(default_data=True, sample_data=False):
 	"Recreates database tables (same as issuing 'drop' and then 'create')"
 	drop()
 	create(default_data, sample_data)
-
-
-
-manager.add_command("shell", Shell(make_context=make_shell_context))
 
 if __name__ == '__main__':
     manager.run()

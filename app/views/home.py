@@ -5,7 +5,9 @@ from .. import db
 
 home = Blueprint('home', __name__)
 
+
 @home.route('/')
+@home.route('/home')
 def index():
 	posts = models.Post.query.all()
 	return render_template('home/index.html', posts = posts)
