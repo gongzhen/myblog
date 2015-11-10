@@ -26,11 +26,11 @@ def logout():
 @auth.route('/user/<username>')
 def user(username):
 	user = User.query.filter_by(username=username).first_or_404()
-	return render_template('auth/user.html', user=user)	
+	return render_template('auth/user.html', user=user)
 
 
 @auth.route('/edit-profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
 	form = EditProfileForm()
-	return render_template('auth/edit_profile.html', form=form)	
+	return render_template('auth/edit_profile.html', form=form)
